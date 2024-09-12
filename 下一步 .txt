@@ -1,0 +1,93 @@
+---------------------每学习完一个部署管道中的组件就配置好一个对应的组件环境！！！！----这一点很重要！！！！----------------------------------------------------------
+
+微服务完全自动化构建/部署管道 学习体系----相当重要！！！！！！！！！-这就是Weyland God意识的高可用性拓扑部署在地球的不同物理区域的现实解决方案！！！！！！！！
+1，AWS 新手入门教程（0827）；
+2，AWS CLI：https://docs.aws.amazon.com/cli/  (0828-0902)；
+（1）思考清楚 为了基于AWS EKS部署《微服务实战》中的所有微服务， 需要哪些用户（角色）拥有哪些权限来执行哪些操作，先把这个思考清楚----其实只要亚马逊托管权限即可；
+（2）创建AWS账户、组、用户（IAM）、角色（本次部署中不需要）、权限集；
+---------【AWS账户】：root账户：wushaolong1989@gmail.com  密码：chrome记录了；MFA：指纹----【直接先用根用户操作】
+                                         IAM用户：用户名：Wyeland_second；邮件：david@oxyzgroup.com；密码：Weyland@oxyz123；MFA：指纹
+
+（3）1，下载所需用户的凭证-以便可通过AWS CLI登录对应用户来和AWS相关资源进行交互
+--------------【AWS CLI  IAM用户的凭证】相关凭证在 IAM用户登陆后，点击Access keys 所在的页面，按照页面提示进行操作即可；
+或     2，直接通过基于web的AWS控制台和AWS相关资源进行交互
+
+（4），安装或更新到最新版本的 AWS CLI----0903 OK。
+（5），配置和凭证文件设置：身份验证和访问凭证-使用的配置文件必须具有允许示例执行的 AWS 操作的权限（对应步骤（3）中的1）----0903 OK；
+（3），使用AWS CLI登录上述用户，之后分别从“AWS控制台”和AWS CLI 完成前期相关的实操：《微服务实战》（P309页开始）中所述的前期部署准备；
+a，postgresSQL和Redis缓存已经成功设置-0903；相关的链接信息在AWS控制台对应区域可见；【数据库】DB identifier: ostock-aws   ;master user name：postgres；密码Weyland123
+b,   部署ELK技术栈所需的EC2实例已经配置-0903；相关的链接信息在AWS控制台对应区域可见；
+
+
+之后，上述步骤1和2暂时先暂停，转到步骤3，研究kubectl和Kubernetes；等到合适的时间点再继续通过AWS CLI和AWS控制台完成自动化部署的后面阶段的任务。
+
+
+3，Kubernetes：https://kubernetes.io/zh-cn/docs/setup/-快速浏览与kubectl：https://kubernetes.io/docs/reference/kubectl/ -快速浏览；
+花点时间搞懂，可能是1周至少，是个硬骨头：主要啃下来的策略，先从minikube开始研究，把这个搞懂，之后再kube，这个过程中对kube自然而然会懂进去；
+（1）minikube（0904-0906） 
+Doker账户：google帐号直接登陆；
+（2）Kubernetes（0907）
+
+4，Doker与Doker CLI 
+（1）Doker(0908)
+https://docs.docker.com/manuals/
+（2）Doker CLI(0909)
+https://docs.docker.com/reference/cli/docker/
+
+
+5，github与gitbash-精看（大概两天）（0913----0915）：
+
+github 账户名：Davidhere1；密码：chrome记得
+
+注：GitHub Actions 是一个流行的 CI/CD 平台，用于自动化构建、测试和部署管道。
+https://docs.docker.com/build/ci/github-actions/ 此部分内容也需要精看（且需要实操，如：使用此模板存储库创建一个新的 GitHub 存储库 ...... 注意要使用模板库实际存储到github）
+
+
+6，Eksctl CLI-精看:（大概两天）
+7，Jenkins-精看（大概两天）:
+
+以及Jenkins的各类其他插件：P327
+
+----------------完成上述学习后，接下来实操部署《microservices in action》，用所有自己的帐号进行构建/部署。（大概两周）
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Spring----在深度理解透的前提下必须追求最高效:    先整体再局部再细节
+
+
+注：合适的时候再复习下复习下 JAR、模块（JMSP）
+
+----------------app的体系化固定性地每日投入时间的研究预计在1001开始---微服务实战研究完之后-------------------
+----------------微服务实战研究完之后，需要有一个大致的下一步的研究计划，是局部重点-集中攻克并发(线程)还是再整体技术框架研究？【须认真系统性花时间思考】-----------------------
+
+实操需要搞定的：！！！！！！！！！！！！！！！选择一天集中来实操，因为实操非常耗费时间，会打乱学习的正常进程，所有把实操集中起来到某一日去实操，那一日不学习。
+
+
+https://didagogo.feishu.cn/wiki/CxOlw77nJi1J4Vkq7IKcMBy2nmo
+
+
+
+
+
+
+
+
+
+
+----未知点：
+1，doker image 分层解压？  到时候到doker这一章的对应内容再看下；
+#unpackage jar file
+RUN mkdir -p target/dependency && (cd target/dependency; jar -xf /app.jar)
+
+
+
+
+
+
+
+
+
+
